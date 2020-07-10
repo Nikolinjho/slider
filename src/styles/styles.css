@@ -1,0 +1,96 @@
+@import "./normalize.css";
+
+@import "./font.css";
+
+
+.wrap{
+    display: grid;
+
+    &__item{
+        
+    }
+}
+
+
+.grid{
+    display: flex;
+    /* white-space: nowrap; */
+    
+    width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    button{
+        position: absolute;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .left{
+        left: 30px;
+        top: 60px;
+        /* display: none; */
+    }
+    .right{
+        right: 30px;
+        top: 60px;
+    }
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff);
+        right: 0;
+        top: 0;
+        width: 25px;
+        height: 100%;
+        z-index: 1;
+    }
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        background: linear-gradient(270deg,hsla(0,0%,100%,0),#fff);
+        left: 0;
+        top: 0;
+        width: 25px;
+        height: 100%;
+        z-index: 1;
+    }
+    &-row{
+        display: flex;
+        transition: all .2s ease-out 0s;
+    }
+}
+
+.column{
+    width: 200px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    &:not(:last-child){
+    }
+    &-image{
+        height: 200px;
+
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    &-title{
+        font-size: 22px;
+        margin-top: 15px
+    }
+
+    &-descr{
+        width: 100%;
+        margin-top: 15px
+    }
+
+    &-price{
+        font-size: 24px;
+        margin-top: 15px;
+    }
+}
